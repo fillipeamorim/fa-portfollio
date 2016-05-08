@@ -1,0 +1,12 @@
+{
+  "name": "default-jade-project",
+  "version": "1.0.0",
+  "author": "Fillipe Amorim <fillipeamorim@me.com>",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-watch": "^4.3.5",
+    "jade": "^1.11.0"
+  }
+}
