@@ -1,6 +1,20 @@
-include partials/header
+extends templates/default
+block title-page
+  title #{siteTitle} - Page Actual
+block extra-styles
+  link(rel="stylesheet", href="extraStyleForThisPageOnly.css")
 
-body
-  p Creating first includes
 
-include partials/footer
+block layout-header
+  include templates/layout-header
+
+block layout-content
+  div.container
+    h2 Page Content
+
+block layout-footer
+  include templates/layout-footer
+
+
+block extra-scripts
+  script(src="scriptHome.js")

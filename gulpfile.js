@@ -25,6 +25,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', ['browserSync'], function () {
    gulp.watch('./src/**/*.jade', ['jade']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
+   gulp.watch('./src/css/**/*.css').on('change', browserSync.reload);
 });
 
 // Gulp Default Task

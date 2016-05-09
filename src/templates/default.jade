@@ -1,0 +1,14 @@
+include variables
+doctype html
+html(lang="#{siteLang}")
+  head
+    meta(charset="#{siteCharset}")
+    block title-page
+    meta(name="description", content="#{siteDescription}")
+    link(rel="stylesheet", href="css/style.css")
+    block extra-styles
+  body
+    block layout-header
+    block layout-content
+    block layout-footer
+    block extra-scripts
