@@ -1,14 +1,25 @@
-include variables
+//- Template for all pages
+include ../partials/variables
+include ../partials/mixins
 doctype html
 html(lang="#{siteLang}")
-  head
-    meta(charset="#{siteCharset}")
-    block title-page
-    meta(name="description", content="#{siteDescription}")
-    link(rel="stylesheet", href="css/style.css")
-    block extra-styles
-  body
-    block layout-header
-    block layout-content
-    block layout-footer
-    block extra-scripts
+    head
+        meta(charset="#{siteCharset}")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        block page-title
+        block page-description
+        link(rel="shortcut icon", href="img/favicon.png")
+        link(rel="apple-touch-icon", sizes="57x57", href="img/apple-touch-icon.png")
+        link(rel="apple-touch-icon", sizes="72x72", href="img/apple-touch-icon-72x72.png")
+        link(rel="apple-touch-icon", sizes="114x114", href="img/apple-touch-icon-114x114.png")
+        link(rel="stylesheet", href="style.css")
+        block extra-styles
+        <!--[if lt IE 9]>
+        <script src="js/vendor/html5shiv.js"></script>
+        <script src="js/vendor/respond.js"></script>
+        <![endif]-->
+    body
+        block header
+        block content
+        block footer
+        block extra-scripts

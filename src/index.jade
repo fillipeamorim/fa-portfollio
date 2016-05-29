@@ -1,20 +1,22 @@
 extends templates/default
-block title-page
-  title #{siteTitle} - Page Actual
+
+block page-title
+	title #{siteTitle} - Home
+
+block page-description
+	meta(name="description", content="Descriptions for this page only")
+
 block extra-styles
-  link(rel="stylesheet", href="extraStyleForThisPageOnly.css")
+	//- link(rel="stylesheet", href="extraStyleForThisPageOnly.css")
 
+block header
+	include ./partials/header
 
-block layout-header
-  include templates/layout-header
+block content
+	include ./partials/content-index
 
-block layout-content
-  div.container
-    h2 Page Content
-
-block layout-footer
-  include templates/layout-footer
-
+block footer
+	include ./partials/footer
 
 block extra-scripts
-  script(src="scriptHome.js")
+	//- script(src="scriptOnlyInHome.js")

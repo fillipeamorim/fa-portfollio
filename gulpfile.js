@@ -1,8 +1,17 @@
-var gulp = require('gulp'),
-    jade = require('jade'),
-    gulpJade = require('gulp-jade'),
-    gulpWatch = require('gulp-watch'),
-    browserSync = require('browser-sync');
+var jade         = require('jade'),
+    browserSync  = require('browser-sync');
+    runSequence  = require('run-sequence');
+    gulp         = require('gulp'),
+    gulpLess         = require('gulp-less'),
+    imagemin     = require('gulp-imagemin'),
+    cache        = require('gulp-cache'),
+    uglify       = require('gulp-uglify'),
+    autoprefixer = require('gulp-autoprefixer'),
+    inlinesource = require('gulp-inline-source'),
+    watch        = require('gulp-watch'),
+    notify       = require('gulp-notify'),
+    gulpJade     = require('gulp-jade'),
+    gulpWatch    = require('gulp-watch'),
 
 gulp.task('jade', function() {
   return gulp.src('./src/*.jade')
