@@ -1,0 +1,11 @@
+img { 
+	@include img-responsive();
+}
+
+a { 
+  @include transition();
+}
+
+body { 
+	font-family: "", sans-serif;
+}

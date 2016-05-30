@@ -1,0 +1,191 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// Responsive Breakpoints
+@mixin breakpoint($bp) {
+  @if $bp == xs {
+    @media only screen and (min-width: $screen-sm) { @content ; }
+  }
+  @else if $bp == sm {
+    @media only screen and (min-width: $screen-sm) { @content ; }
+  }
+  @else if $bp == md {
+    @media only screen and (min-width: $screen-md) { @content ; }
+  }
+  @else if $bp == lg {
+    @media only screen and (min-width: $screen-lg) { @content ; }
+  }
+}
+
+// Font sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include font-size(18);
+// @mixin font-size ($size) {
+//   $remValue: $size / 16;
+//   $pxValue: ($size);
+//   font-size: $pxValue + px; 
+//   font-size: $remValue + rem;
+// }
+//------or-----//
+// @function calculateRem($size) {
+//   $remSize: $size / 16px;
+//   @return $remSize * 1rem;
+// }
+// @mixin font-size($size) {
+//   font-size: $size;
+//   font-size: calculateRem($size);
+// }
+
+// placeholder color change
+@mixin placeholder-color ($color) {
+  ::-webkit-input-placeholder { color: $color; }
+  :-moz-placeholder           { color: $color; } // Firefox 18-
+  ::-moz-placeholder          { color: $color; } // Firefox 19+
+  :-ms-input-placeholder      { color: $color; }
+}
+
+//align icons in vertically positions
+@mixin vertical-align() {
+    display: block;
+    &:before {
+        content: ‘’;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+    }
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+        width: 98%;
+    }
+}
+
+// font-face css3 mixin
+@mixin font-face($name, $url) {
+  @font-face {
+    font-family: #{$name};
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot#iefix') format("embedded-opentype"),
+         url('#{$url}.ttf') format('truetype'),
+         url('#{$url}.svg##{$name}') format('svg'),
+         url('#{$url}.woff') format('woff');
+ 
+    @content;
+  }
+}
+
+// Line height sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage @include line-height(22);
+@mixin line-height ($size) {
+  $remValue: $size / 16;
+  $pxValue: ($size);
+  line-height: $pxValue + px; 
+  line-height: $remValue + rem;
+}
+
+// Border Radius
+// Example usage @include border-radius(2px) || @include border-radius(100%);
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Box Shadow
+// Example usage @include box-shadow(0 2px 3px 3px #000) || @include box-shadow(none);
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// Remove selection
+// Example usage @include no-select()
+@mixin no-select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+// Rotate (Transformation)
+// Example usage @include rotate(180) || @include rotate(-45);
+@mixin rotate($rotate) {
+  -ms-transform: rotate($rotate+deg);
+  -webkit-transform: rotate($rotate+deg);
+  transform: rotate($rotate+deg);
+}
+
+// SVG background with PNG fallback
+// Example Usage @include svg-bg("img/banner.svg", "img/banner.png", 50%, 50%, no-repeat);
+@mixin bg-svg($svg, $png, $x: 0, $y: 0, $repeat: no-repeat) {
+  background: url(@svg) $x $y $repeat;
+  .no-svg & {
+    background: url(@png) $x $y $repeat;
+  }
+}
+
+// Background Color with Opacity
+// Example Usage: @include bg-rgba(#111, 50%);
+@mixin bg-rgba($color, $alpha) {
+  $opacity: $alpha / 100%;
+  $rgba: rgba(red($color), green($color), blue($color), $opacity);
+  $argb: argb($rgba); //for ie
+  background-color: $color;
+  background-color: $rgba;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb}, endColorstr=#{$argb});
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb}, endColorstr=#{$argb});
+}
+
+// Opacity
+// Example Usage: @include opacity(50%);
+@mixin opacity ($percentOpacity: 50%) {
+  $opacity: unit($percentOpacity) / 100;
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+
+// Animations
+// Example Usage @include animate(1s);
+@mixin animate($duration: 1s) {
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+// Animation Delay
+// Example Usage @mixin animation-delay(1s)
+@mixin animate-delay($delay: 1s) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin fadeIn { animation-name: fadeIn; }
+@mixin fadeInDown { animation-name: fadeInDown; }
+@mixin fadeInDownBig { animation-name: fadeInDownBig; }
+@mixin fadeInLeft { animation-name: fadeInLeft; }
+@mixin fadeInLeftBig { animation-name: fadeInLeftBig; }
+@mixin fadeInRight { animation-name: fadeInRight; }
+@mixin fadeInRightBig { animation-name: fadeInRightBig; }
+@mixin fadeInUp { animation-name: fadeInUp; }
+@mixin fadeInUpBig { animation-name: fadeInUpBig; }
+
+// CSS Transitions
+// Example Usage .transition(0.3s)
+@mixin transition($speed: 0.3s) {
+  -webkit-transition: all $speed;
+   -moz-transition: all $speed;
+   transition: all $speed;
+}
+
+// Transition Delay
+// Example usage .transition-delay(.3s)
+@mixin transition-delay($speed: 0.3s) {
+  -webkit-transition-delay: $speed;
+  -moz-transition-delay: $speed;
+  transition-delay: $speed;
+}

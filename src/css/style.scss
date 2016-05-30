@@ -1,0 +1,18 @@
+// ==========================================================================
+// Ficticious Site for Portfolio
+// ==========================================================================
+
+// Variable Overrides and Colors
+@import "styles/variables";
+
+//Import Bootstrap
+@import "bootstrap";
+
+// Website Styles
+@import "styles/animations";
+@import "styles/mixins";
+/////////////////////
+@import "styles/base";
+@import "styles/components";
+@import "styles/header";
+@import "styles/footer";
