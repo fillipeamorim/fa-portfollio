@@ -1,6 +1,19 @@
 //- Header Layout
 header
-	nav
-		ul
-			li
-				a(href="", title="", class="")
+	div.container
+		div.header-content
+			nav.navbar
+				div.navbar-header
+					button(class="navbar-toggle", type="button", data-toggle="collapse", data-target="#bar1")
+						span(class="sr-only") Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					div.logo
+						a(href="/", title="Fillipe Amorim | A Professional Front-end Programmer", class="fa") Fillipe Amorim | A Professional Front-end Programmer
+				div#bar1.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li
+							a(href="/", title="Recent Jobs") Jobs
+						li
+							a(href="mailto:fillipeamorim@me.com", title="Send an e-mail") Contact

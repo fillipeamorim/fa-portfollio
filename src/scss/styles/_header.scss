@@ -1,0 +1,55 @@
+.fa {
+	display: block;
+	float: left;
+	width:55px;
+	height:55px;
+	background: url('img/FA.png') no-repeat left center;
+	background-size: cover;
+	text-indent: -99999em;
+}
+
+.header-content{
+	@include make-row();
+
+	.navbar {
+		border: 0;
+		margin-bottom: 20px;
+		padding-top: 15px;
+		@include make-xs-column(12);
+	  @include transition();
+		@include breakpoint(sm) { padding-top: 30px; }
+		
+	  .navbar-collapse { box-shadow: none; }
+		.navbar-toggle { margin-right: 0; }
+	  .icon-bar { background-color: $black; }
+		
+	  .nav {
+		  li a {
+		    font-size: $font-size-base;
+		    font-weight: 300;
+		    letter-spacing: 1px;
+				padding: 0 10px 10px;
+		    text-align: right;
+		    text-transform: uppercase;
+		    width:100%;
+		    &:hover, &:active { background: none; }
+		 	}
+		 	@include breakpoint(sm) { margin-top: 10px; }
+	  }
+
+	  @include breakpoint(sm) {
+	    .nav {
+	      float: right;
+	      li { margin-right: 20px; }
+	      li a { padding: 8px 0px; }
+	      &>:last-child { margin-right: 0px; }
+	    }
+	    .navbar-header { padding: 0 15px; }
+	  }
+	}
+}
+
+.navbar.open { background-color: $black; }
+.navbar.open .icon-bar { background-color: $white; }
+.navbar.open a { color: $white; &:active, &:hover { color: $green; } }
+.navbar.open .fa{ background-image: url('img/FAB.png'); }
