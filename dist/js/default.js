@@ -1,1 +1,0 @@
-!function(){jQuery(".navbar").click(function(){jQuery(".navbar").toggleClass("open")})}(),WebFont.load({google:{families:["Noticia+Text:400","Montserrat:400,700"]}});var wow=new WOW({boxClass:"animate",animateClass:"active",offset:1,mobile:!0,live:!0});wow.init();

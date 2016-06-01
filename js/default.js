@@ -1,0 +1,1 @@
+!function(){jQuery(".navbar-toggle").click(function(){jQuery(".navbar").toggleClass("open")})}(),WebFont.load({google:{families:["Montserrat:400","Merriweather:300,300italic,700,700italic"]}});var wow=new WOW({boxClass:"animate",animateClass:"active",offset:1,mobile:!0,live:!0});wow.init();
