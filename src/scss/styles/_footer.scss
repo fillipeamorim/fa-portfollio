@@ -1,0 +1,9 @@
+.inner-footer {
+	@include make-row();
+	p{
+		display: block;
+		font-weight: 300;
+		text-align: center;
+		margin: 40px 0;
+	}
+}
