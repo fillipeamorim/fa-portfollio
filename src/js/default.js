@@ -2,13 +2,14 @@
 
 // jQuery functions
 (function(){
-  jQuery(".navbar").click(function() {
+  jQuery(".navbar-toggle").click(function() {
     jQuery(".navbar").toggleClass('open');
+    //jQuery(".fa").toggleClass('open');
   });
 })();
 
 // Load Custom Google Font
-WebFont.load({ google: { families: ['Noticia+Text:400', 'Montserrat:400,700'] } });
+WebFont.load({ google: { families: ['Montserrat:400', 'Merriweather:300,300italic,700,700italic'] } });
 
 // Setup WOW.js
 var wow = new WOW({
