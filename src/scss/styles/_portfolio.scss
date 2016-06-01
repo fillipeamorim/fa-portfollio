@@ -1,0 +1,49 @@
+.portfolio-content {
+	@include make-row();
+	h2 {
+		display: block;
+		width: 100%;
+		margin: 20px 0 40px;
+		text-align: center;
+		font-family: 'Merriweather';
+		font-style: italic;
+		font-size: $font-size-h3;
+		font-weight: 300;
+		@include breakpoint(md) {
+			margin: 50px 0 40px;
+		}
+	}
+	.list-jobs{
+		@include make-xs-column(12);
+		padding-left: 5px;
+		padding-right: 5px;
+		@include breakpoint(md) {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.job {
+			@include make-xs-column(6);
+			@include make-sm-column(4);
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-bottom: 20px;
+			@include breakpoint(md) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			.job_thumbnail {
+				margin-bottom: 10px;
+			}
+			.job_title {
+				h2 {
+					font-family: 'Montserrat';
+					font-size: $font-size-h5;
+					font-weight: 300;
+					font-style: normal;
+					text-align: left;
+					margin: 0;
+				}
+			}
+		}
+	}
+}

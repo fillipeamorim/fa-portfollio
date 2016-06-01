@@ -3,9 +3,14 @@ img {
 }
 
 a { 
+	color: $black;
   @include transition();
+  &:hover, &:active {
+    color: $green;
+    text-decoration: none;
+  }
 }
 
 body { 
-	font-family: "", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
