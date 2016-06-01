@@ -31,7 +31,7 @@ gulp.task('sass', function () {
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./src/'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -70,7 +70,7 @@ gulp.task('jadefy', function() {
 gulp.task('jsmin', function() {
   return gulp.src('./src/js/**/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(gulp.dest('./js/'));
 });
 
 // Minify Images
@@ -80,7 +80,7 @@ gulp.task('imagemin', function (){
   .pipe(cache(imagemin({
       interlaced: true
     })))
-  .pipe(gulp.dest('./dist/img'));
+  .pipe(gulp.dest('./img'));
 });
 
 // BrowserSync Task (Live reload)
@@ -99,7 +99,7 @@ gulp.task('browserSync', function() {
 gulp.task('inlinesource', function () {
   return gulp.src('./src/**/*.html')
     .pipe(inlinesource())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./'));
 });
 
 // Gulp Watch Task
@@ -111,7 +111,11 @@ gulp.task('watch', ['browserSync'], function () {
 
 // Gulp Clean Up Task
 gulp.task('clean', function() {
-  del('dist');
+  del('img');
+  del('js');
+  del('index.html');
+  del('style.css');
+  del('style.css.map');
 });
 
 // Gulp Default Task
