@@ -103,5 +103,5 @@ gulp.task('default', ['watch']);
 
 // Gulp Build Task
 gulp.task('build', function() {
-  runSequence('clean', 'sass', 'imagemin', 'jsmin', 'inlinesource');
+  runSequence('clean', 'sass', 'imagemin', 'jsmin', 'jadefy', 'inlinesource');
 });
