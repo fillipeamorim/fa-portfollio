@@ -6091,10 +6091,12 @@ body {
           padding-right: 15px; } }
       .portfolio-content .list-jobs .job .job_thumbnail {
         margin-bottom: 10px; }
+        .portfolio-content .list-jobs .job .job_thumbnail img {
+          box-shadow: 0 0 0 1px #F0F0F0; }
       .portfolio-content .list-jobs .job .job_title h2 {
         font-family: 'Montserrat';
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 500;
         font-style: normal;
         text-align: left;
         margin: 0; }

@@ -33,12 +33,15 @@
 			}
 			.job_thumbnail {
 				margin-bottom: 10px;
+				img {
+					@include box-shadow(0 0 0 1px $grey-light)
+				}
 			}
 			.job_title {
 				h2 {
 					font-family: 'Montserrat';
 					font-size: $font-size-h5;
-					font-weight: 300;
+					font-weight: 500;
 					font-style: normal;
 					text-align: left;
 					margin: 0;

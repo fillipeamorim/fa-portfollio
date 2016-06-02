@@ -84,7 +84,7 @@ gulp.task('inlinesource', function () {
 
 // Gulp Watch Task
 gulp.task('watch', ['browserSync'], function () {
-   gulp.watch('./src/scss/**/*', ['sass', 'styleguide']);
+   gulp.watch('./src/scss/**/*', ['sass']);
    gulp.watch('./src/**/*.jade', ['jadefy']);
    gulp.watch('./src/**/*.html').on('change', browserSync.reload);
 });
